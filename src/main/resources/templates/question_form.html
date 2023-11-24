@@ -1,0 +1,13 @@
+<h5>질문등록</h5>
+<form th:action="@{/question/create}" method="post">
+    <div>
+        <label for="subject">제목</label>
+        <input type="text" name="subject" id="subject">
+    </div>
+    <div>
+        <label for="content" class="form-label">내용</label>
+        <textarea name="content" id="content" rows="10"></textarea>
+    </div>
+    <input type="submit" value="저장하기">
+    <button><a th:href="@{/question/list}" style="text-decoration:none">목록으로 돌아가기</a></button>
+</form>

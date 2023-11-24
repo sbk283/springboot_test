@@ -1,0 +1,23 @@
+<h2>질문 목록</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성일시</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="q : ${questionList}">
+            <td th:text="${q.id}"></td>
+            <td>
+                <a th:href="@{|/question/detail/${q.id}|}" th:text="${q.subject}"></a>
+            </td>
+            <td th:text="${q.createDate}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button><a th:href="@{/question/create}" style="text-decoration:none">질문등록</a></button>
+<button><a th:href="@{/question/list}" style="text-decoration:none">새로고침</a></button>
